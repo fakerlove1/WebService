@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.w3school.com.cn"
+           xmlns="http://www.w3school.com.cn"
+           elementFormDefault="qualified">
+
+    <xs:element name="students">
+        <xs:complexType>
+<!--            xs:sequence 表示 标签必须按照如下 顺序出现-->
+            <xs:sequence>
+<!--                表示有 student 这个元素  maxOccurs="unbounded" 不限制个数-->
+                <xs:element name="student" maxOccurs="unbounded" minOccurs="0">
+<!--                    表示这个是复杂的属性-->
+                    <xs:complexType>
+<!--                  all 表示按照任意顺序出现 -->
+                        <xs:sequence>
+<!--                            minOccurs="1" 不设置 的话 ，默认为 1-->
+<!--                      minOccurs 最少出现次数     -->
+<!--                            表示必须出现 ，并且只能出现一次-->
+                            <xs:element name="stuname" type="xs:string" />
+<!--                      maxOccurs   表示？ 出现 0 或者 1   -->
+                            <xs:element name="stuage" type="xs:integer" minOccurs="0"/>
+
+                            <xs:element name="phone" type="xs:string"  />
+<!--                            表示上无线 ，0 -n 次 -->
+                            <xs:element name="course" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                        <!--            表示 student 标签有 id 这个属性-->
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>

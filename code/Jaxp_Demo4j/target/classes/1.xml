@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<booklist>
+    <book isbn="1001" catalog="武侠">
+        <title lang="zh">天龙八部</title>
+        <author>金庸</author>·
+        <price> 60</price>
+        <year> 1965</year>
+    </book>
+    <book isbn="1002" catalog="武 侠">
+        <title lang="zh">天涯明月刀</title>
+        <author>古龙</author>
+        <price>45</price>
+        <year>1969</year>
+    </book>
+    <book isbn="1003" catalog="科幻">
+        <title lang="en">哈 利波特</title>
+        <author>Rowling</author>
+        <price>86</price>
+        <year>2005</year>
+    </book>
+    <book isbn="1004" catalog="Web">
+        <title lang="en">Struts</title>
+        <author>Bruce</author>
+        <price>90</price>
+        <year>2011</year>
+    </book>
+</booklist>

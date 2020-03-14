@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 这里标签表示 这个文档为xml 格式-->
+<!--!DOCTYPE 表示的是 DTD 文档格式的内容-->
+<!-- students 表示根节点 [] 里面放入的规则-->
+<!-- #PCDATA 表示的是 字符串-->
+
+<!-- 步骤 -->
+<!--第一步 列举出出现的 子标签，及放数据的标签 -->
+<!--子标签里面 没有其他标签了 ，只有数据，可以直接放(#PCDATA)-->
+<!--第二步 列举出所有的嵌套关系，是不放数据的标签  -->
+<!--第三步 列举出所有的属性-->
+
+<!DOCTYPE students[
+
+<!ELEMENT stuname (#PCDATA)>
+<!ELEMENT stuage (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT course (#PCDATA)>
+
+<!ELEMENT students (student*)>
+<!ELEMENT student (stuname+,stuage?,phone*,course*)>
+<!ATTLIST student id CDATA #REQUIRED>
+        ]>
+<students >
+
+    <student id="1">
+        <stuname >zhangsan</stuname>
+        <stuage>11</stuage>
+        <phone>150XXXX1235</phone>
+        <course>语文</course>
+        <course>数学</course>
+    </student>
+
+    <student id="2">
+        <stuname>lilei</stuname>
+        <phone>150XXXX1234</phone>
+    </student>
+
+    <student id="3">
+        <stuname>lisi</stuname>
+        <stuage>20</stuage>
+        <phone>15121976526</phone>
+    </student>
+
+</students>
+

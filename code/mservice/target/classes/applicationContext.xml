@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="UserServiceImpl" class="com.ak.service.impl.UserServiceImpl"></bean>
+
+    <!-- 配置cxf
+        address 地址
+        serviceClass接口
+        jaxws:serviceBean实现类
+    -->
+    <jaxws:server address="/user" serviceClass="com.ak.service.UserService">
+        <jaxws:serviceBean>
+            <ref bean="UserServiceImpl"/>
+        </jaxws:serviceBean>
+    </jaxws:server>
+
+</beans>

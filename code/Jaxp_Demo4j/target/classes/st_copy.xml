@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<students>
+    <student>
+        <stuname name="a">lilei_copy</stuname>
+        <stuage>20</stuage>
+    </student>
+    <student>
+        <stuname>amy</stuname>
+        <stuage>19</stuage>
+    </student>
+    <student>
+        <stuname>zzz</stuname>
+        <stuage>18</stuage>
+    </student>
+</students>

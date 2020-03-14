@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.service.example/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="MyServiceImplService" targetNamespace="http://impl.service.example/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jaxb.dev.java.net/array" version="1.0">
+
+  <xs:complexType final="#all" name="stringArray">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.service.example/" xmlns:ns1="http://jaxb.dev.java.net/array" elementFormDefault="unqualified" targetNamespace="http://impl.service.example/" version="1.0">
+
+  <xs:import namespace="http://jaxb.dev.java.net/array"/>
+
+  <xs:element name="add" type="tns:add"/>
+
+  <xs:element name="addResponse" type="tns:addResponse"/>
+
+  <xs:element name="kk" type="tns:kk"/>
+
+  <xs:element name="kkResponse" type="tns:kkResponse"/>
+
+  <xs:element name="mins" type="tns:mins"/>
+
+  <xs:element name="minsResponse" type="tns:minsResponse"/>
+
+  <xs:complexType name="add">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="kk">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="kkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:stringArray"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mins">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="minsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="minsResponse">
+    <wsdl:part element="tns:minsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kkResponse">
+    <wsdl:part element="tns:kkResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="tns:addResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part element="tns:add" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kk">
+    <wsdl:part element="tns:kk" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mins">
+    <wsdl:part element="tns:mins" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MyServiceImpl">
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:add" name="add">
+    </wsdl:input>
+      <wsdl:output message="tns:addResponse" name="addResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kk">
+      <wsdl:input message="tns:kk" name="kk">
+    </wsdl:input>
+      <wsdl:output message="tns:kkResponse" name="kkResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mins">
+      <wsdl:input message="tns:mins" name="mins">
+    </wsdl:input>
+      <wsdl:output message="tns:minsResponse" name="minsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyServiceImplServiceSoapBinding" type="tns:MyServiceImpl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kk">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="kk">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="kkResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mins">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="mins">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="minsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyServiceImplService">
+    <wsdl:port binding="tns:MyServiceImplServiceSoapBinding" name="MyServiceImplPort">
+      <soap:address location="http://localhost:8081/cxf"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

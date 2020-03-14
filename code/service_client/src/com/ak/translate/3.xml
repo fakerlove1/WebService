@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students
+        xmlns="http://www.w3school.com.cn"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+        xsi:schemaLocation="http://www.w3school.com.cn 2.xsd">
+    <!-- 这里是应用xml 的地方      -->
+    <student id="1">
+        <stuname >zhangsan</stuname>
+        <stuage>11</stuage>
+        <phone>150XXXX1235</phone>
+        <course>语文</course>
+        <course>数学</course>
+    </student>
+
+    <student id="2">
+        <stuname>lilei</stuname>
+        <phone>150XXXX1234</phone>
+    </student>
+
+    <student id="3">
+        <stuname>lisi</stuname>
+        <stuage>20</stuage>
+        <phone>15121976526</phone>
+    </student>
+
+</students>
+
